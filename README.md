@@ -209,7 +209,7 @@ print(agent.performance)
 ```
 
 # OUTPUT
-![alt text](<peas program output.png>)
+![alt text](<peas program output-1.png>)
 
 
 # RESULT
