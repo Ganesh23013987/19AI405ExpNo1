@@ -20,7 +20,6 @@ Actuators: Left, Right, Suck, NoOp.
 
 Sensors: agent can perceive its location and whether location is dirty.</p>
 
-<hr>
 <h3>PEAS DESCRIPTION:</h3>
 <table>
   <tr>
@@ -40,7 +39,6 @@ Sensors: agent can perceive its location and whether location is dirty.</p>
 </table>
 
 ## DESIGN STEPS
-
 ### STEP 1:
 Identifying the input:
 ### STEP 2:
