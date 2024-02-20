@@ -7,6 +7,7 @@
 
 <p>To find the PEAS description for the given AI problem and develop an AI agent.</p>
 
+
 <h3>Theory</h3>
 
 <p>Performance Measure: minimize energy consumption, maximize dirt pick up. Making this precise:
@@ -18,6 +19,7 @@ environment is static (clean squares stay clean).
 Actuators: Left, Right, Suck, NoOp.
 
 Sensors: agent can perceive its location and whether location is dirty.</p>
+
 <hr>
 <h3>PEAS DESCRIPTION:</h3>
 <table>
@@ -37,20 +39,21 @@ Sensors: agent can perceive its location and whether location is dirty.</p>
   </tr>
 </table>
 
-# DESIGN STEPS
-## STEP 1:
+## DESIGN STEPS
+
+### STEP 1:
 Identifying the input:
-## STEP 2:
+### STEP 2:
 Identifying the output:
-## STEP 3:
+### STEP 3:
 Developing the PEAS description:
-## STEP 4:
+### STEP 4:
 Implementing the AI agent
-## STEP 5:
+### STEP 5:
 Measure the performance parameters
 
 
-# PROGRAM
+## PROGRAM
 ```
 import random
 class Thing:
