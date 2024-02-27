@@ -149,7 +149,8 @@ class Environment:
 
     def step(self):
         """Run the environment for one time step. If the
-        actions and exogenous changes are independent, this method will do. If there are interactions between them, you'll need to override this method."""
+        actions and exogenous changes are independent, this method will do.
+        If there are interactions between them, you'll need to override this method."""
         if not self.is_done(): 
             actions = []
             for agent in self.agents:
@@ -168,7 +169,8 @@ class Environment:
             self.step()
 
     def add_thing(self, thing, location=None):
-        """Add a thing to the environment, setting its location. For convenience, if thing is an agent program we make a new agent for it. (Shouldn't need to override this.)"""
+        """Add a thing to the environment, setting its location. For convenience,
+        if thing is an agent program we make a new agent for it. (Shouldn't need to override this.)"""
         if not isinstance(thing, Thing):
             thing = Agent(thing)
         if thing in self.things:
@@ -194,7 +196,9 @@ class Environment:
             self.agents.remove(thing)
 
 class TrivialIndoorEnvironment(Environment):
-    """This environment has two locations, A and B. Each can be unhealthy or healthy. The agent perceives its location and the location's status. This serves as an example of how to implement a simple Environment."""
+    """This environment has two locations, A and B. Each can be unhealthy or healthy.
+    The agent perceives its location and the location's status.
+    This serves as an example of how to implement a simple Environment."""
 
     def __init__(self):
         super().__init__()
@@ -209,7 +213,8 @@ class TrivialIndoorEnvironment(Environment):
         return agent.location, self.status[agent.location]
 
     def execute_action(self, agent, action):
-        """Change agent's location and/or location's status; track performance. Score 10 for each treatment; -1 for each move."""
+        """Change agent's location and/or location's status; track performance.
+           Score 10 for each treatment; -1 for each move."""
         if action == "Right":
             agent.location = room_B
             agent.performance -= 1
