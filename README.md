@@ -81,7 +81,7 @@ class Agent(Thing):
     def can_grab(self, thing):
         """Return True if this agent can grab this thing. Override for appropriate subclasses of Agent and Thing.""" 
         return False
-    def TableDrivenAgentProgram(table): 
+def TableDrivenAgentProgram(table): 
     """
     [Figure 2.7]
     This agent selects an action based on the percept sequence. It is practical only for tiny domains.
@@ -96,9 +96,9 @@ class Agent(Thing):
         action = table.get(tuple(percepts))
         return action 
     return program
-    room_A, room_B = (0,0), (1,0) # The two locations for the Doctor to treat
 
-    def TableDrivenDoctorAgent():
+room_A, room_B = (0,0), (1,0) # The two locations for the Doctor to treat
+def TableDrivenVacuumCleanerAgent():
     """
     Tabular approach towards hospital function. 
     """
@@ -116,7 +116,8 @@ class Agent(Thing):
     ((room_B, "dirty"), (room_B, "clean"), (room_A, "dirty")): "suck",
     }
     return Agent(TableDrivenAgentProgram(table))
-    TableDrivenDoctorAgent()
+
+TableDrivenVacuumCleanerAgent()
 
 class Environment:
     """Abstract class representing an Environment. 'Real' Environment classes inherit from this. Your Environment will typically need to implement:
@@ -192,7 +193,7 @@ class Environment:
         if thing in self.agents: 
             self.agents.remove(thing)
 
-class TrivialDoctorEnvironment(Environment):
+class TrivialIndoorEnvironment(Environment):
     """This environment has two locations, A and B. Each can be unhealthy or healthy. The agent perceives its location and the location's status. This serves as an example of how to implement a simple Environment."""
 
     def __init__(self):
@@ -227,11 +228,10 @@ class TrivialDoctorEnvironment(Environment):
     def default_location(self, thing):
            
         return random.choice([room_A, room_B])
-
-    if   __name__ == "__main__":
+if   __name__ == "__main__":
     
-    agent = TableDrivenDoctorAgent() 
-    environment = TrivialDoctorEnvironment() 
+    agent = TableDrivenVacuumCleanerAgent()
+    environment = TrivialIndoorEnvironment()
     #print(environment)
     environment.add_thing(agent)
     print("\tStatus of Vacuum Cleaner before cleaning")
@@ -245,11 +245,12 @@ class TrivialDoctorEnvironment(Environment):
         print(environment.status)
         print("AgentLocation : {0}".format(agent.location)) 
         print("Performance : {0}".format(agent.performance)) 
-        time.sleep(3)                            
+        time.sleep(3)
+                        
 ```
 
 # OUTPUT
-![alt text](<peas vacuum cleaning agent.png>)
+![alt text](<peas program output-2.png>)
 
 
 # RESULT
