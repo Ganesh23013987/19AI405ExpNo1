@@ -12,7 +12,7 @@
 
 <p>Performance Measure: minimize energy consumption, maximize dirt pick up. Making this precise:
 one point for each clean square over lifetime of 1000 steps.
-
+  
 Environment: two squares, dirt distribution unknown, assume accions are deterministic and
 environment is static (clean squares stay clean).
 
